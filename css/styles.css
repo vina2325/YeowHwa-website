@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.language .active {
+  font-weight: 600;
+  color: #fff;
+}
+
+.nav .active {
+  color: #33c2c9;
+}
+.dropdown-toggle:hover + .dropdown-menu {
+  display: block;
+}
+.aos-item {
+  opacity: 0; /* 初始透明度 */
+  transform: translateY(-20px); /* 初始位置，元素向下移动 100px */
+  transition:
+    transform 1s ease-out,
+    opacity 1s ease-out;
+}
+
+.aos-animate .aos-item {
+  opacity: 1; /* 动画结束时完全可见 */
+  transform: translateY(0px); /* 动画目标，元素向下移动仅 10px */
+}

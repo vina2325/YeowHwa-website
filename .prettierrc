@@ -1,0 +1,7 @@
+{
+  "semi": true,
+  "singleQuote": false,
+  "htmlWhiteSpaceSensitivity": "css",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "pluginSearchDirs": false
+}
