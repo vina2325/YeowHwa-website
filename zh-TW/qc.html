@@ -92,7 +92,7 @@
     </style>
 </head>
 
-<body id="qc" class="bg-white">
+<body id="qc" class="bg-white" x-data="{ openTab: 1, imgModal: false, imgModalSrc: '', imgModalDesc: '' }">
     <nav
         class="sticky top-0 flex w-full flex-wrap items-center justify-between bg-white text-gray-700 border-b border-b-gray-100 drop-shadow  z-[100]">
         <div class="container mx-auto items-center justify-around px-4 lg:flex">
@@ -276,10 +276,9 @@
     </section>
     <section class="content" data-aos="fade-in" data-aos-duration="2000">
         <div class="container mx-auto">
-            <div x-data="{ openTab: 1 }"
-                x-init="openTab = window.location.hash ? parseInt(window.location.hash.replace('#tab', '')) : 1; 
-            window.scrollTo(0, 0); 
-            window.addEventListener('hashchange', () => { openTab = window.location.hash ? parseInt(window.location.hash.replace('#tab', '')) : 1; window.scrollTo(0, 0) })"
+            <div x-init=" openTab=window.location.hash ? parseInt(window.location.hash.replace('#tab', '' )) : 1;
+                window.scrollTo(0, 0); window.addEventListener('hashchange', ()=> { openTab = window.location.hash ?
+                parseInt(window.location.hash.replace('#tab', '')) : 1; window.scrollTo(0, 0) })"
                 class="lg:px-56 mb-24">
                 <div class="max-w-full mx-auto relative">
                     <div
@@ -303,7 +302,48 @@
 
                     <div class="relative z-10  bg-white p-4 border border-gray-200">
                         <div x-show="openTab == 1">
-                            <div class="container  mx-auto p-4">
+                            <!-- 圖片網格 -->
+                            <div class="flex items-center justify-center">
+                                <div class="container mx-auto p-4">
+                                    <div
+                                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+                                        <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: 'https://fakeimg.pl/430x540/', imgModalDesc: '認證1' })"
+                                                class="cursor-pointer">
+                                                <img src="https://fakeimg.pl/430x540/" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
+                                            <div class="px-1 py-4">
+                                                <div class="font-bold text-lg text-gray-800 mb-2 text-center">
+                                                    認證1</div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: 'https://fakeimg.pl/430x540/', imgModalDesc: '認證2' })"
+                                                class="cursor-pointer">
+                                                <img src="https://fakeimg.pl/430x540/" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
+                                            <div class="px-1 py-4">
+                                                <div class="font-bold text-lg text-gray-800 mb-2 text-center">
+                                                    認證2</div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: 'https://fakeimg.pl/430x540/', imgModalDesc: '認證3' })"
+                                                class="cursor-pointer">
+                                                <img src="https://fakeimg.pl/430x540/" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
+                                            <div class="px-1 py-4">
+                                                <div class="font-bold text-lg text-gray-800 mb-2 text-center">
+                                                    認證3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="container  mx-auto p-4">
                                 <div class="grid ">
                                     <div class="swiper mySwiper">
                                         <div class="swiper-wrapper">
@@ -341,7 +381,7 @@
                                         <div class="swiper-pagination"></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div x-show="openTab == 2">
                             <div class="main flex flex-col m-5">
@@ -429,57 +469,108 @@
                             </div>
                         </div>
                         <div x-show="openTab == 3">
+                            <!-- 圖片網格 -->
                             <div class="flex items-center justify-center">
-                                <div class="container  mx-auto p-4">
+                                <div class="container mx-auto p-4">
                                     <div
                                         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-                                        <!-- Replace this with your grid items -->
                                         <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
-                                            <img src="../image/qc2.png" alt="Placeholder Image"
-                                                class="aspect-[3/4] w-full rounded-md object-cover">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: '../image/qc2.png', imgModalDesc: '2018年傑出產業創新獎' })"
+                                                class="cursor-pointer">
+                                                <img src="../image/qc2.png" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
                                             <div class="px-1 py-4">
                                                 <div class="font-bold text-lg text-gray-800 mb-2 text-center">
                                                     2018年傑出產業創新獎</div>
                                             </div>
                                         </div>
                                         <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
-                                            <img src="../image/qc2.png" alt="Placeholder Image"
-                                                class="aspect-[3/4] w-full rounded-md object-cover">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: '../image/qc2.png', imgModalDesc: '2018年傑出產業創新獎' })"
+                                                class="cursor-pointer">
+                                                <img src="../image/qc2.png" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
                                             <div class="px-1 py-4">
                                                 <div class="font-bold text-lg text-gray-800 mb-2 text-center">
                                                     2018年傑出產業創新獎</div>
                                             </div>
                                         </div>
                                         <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
-                                            <img src="../image/qc2.png" alt="Placeholder Image"
-                                                class="aspect-[3/4] w-full rounded-md object-cover">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: '../image/qc2.png', imgModalDesc: '2018年傑出產業創新獎' })"
+                                                class="cursor-pointer">
+                                                <img src="../image/qc2.png" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
                                             <div class="px-1 py-4">
                                                 <div class="font-bold text-lg text-gray-800 mb-2 text-center">
                                                     2018年傑出產業創新獎</div>
                                             </div>
                                         </div>
                                         <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
-                                            <img src="../image/qc2.png" alt="Placeholder Image"
-                                                class="aspect-[3/4] w-full rounded-md object-cover">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: '../image/qc2.png', imgModalDesc: '2018年傑出產業創新獎' })"
+                                                class="cursor-pointer">
+                                                <img src="../image/qc2.png" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
                                             <div class="px-1 py-4">
                                                 <div class="font-bold text-lg text-gray-800 mb-2 text-center">
                                                     2018年傑出產業創新獎</div>
                                             </div>
                                         </div>
                                         <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
-                                            <img src="../image/qc2.png" alt="Placeholder Image"
-                                                class="aspect-[3/4] w-full rounded-md object-cover">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: '../image/qc2.png', imgModalDesc: '2018年傑出產業創新獎' })"
+                                                class="cursor-pointer">
+                                                <img src="../image/qc2.png" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
                                             <div class="px-1 py-4">
                                                 <div class="font-bold text-lg text-gray-800 mb-2 text-center">
                                                     2018年傑出產業創新獎</div>
                                             </div>
                                         </div>
                                         <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
-                                            <img src="../image/qc2.png" alt="Placeholder Image"
-                                                class="aspect-[3/4] w-full rounded-md object-cover">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: '../image/qc2.png', imgModalDesc: '2018年傑出產業創新獎' })"
+                                                class="cursor-pointer">
+                                                <img src="../image/qc2.png" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
                                             <div class="px-1 py-4">
                                                 <div class="font-bold text-lg text-gray-800 mb-2 text-center">
                                                     2018年傑出產業創新獎</div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: '../image/qc2.png', imgModalDesc: 'XXXX年傑出產業創新獎' })"
+                                                class="cursor-pointer">
+                                                <img src="../image/qc2.png" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
+                                            <div class="px-1 py-4">
+                                                <div class="font-bold text-lg text-gray-800 mb-2 text-center">
+                                                    XXXX年傑出產業創新獎</div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: '../image/qc2.png', imgModalDesc: 'XXXX年傑出產業創新獎' })"
+                                                class="cursor-pointer">
+                                                <img src="../image/qc2.png" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
+                                            <div class="px-1 py-4">
+                                                <div class="font-bold text-lg text-gray-800 mb-2 text-center">
+                                                    XXXX年傑出產業創新獎</div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-md border pt-4 px-4 pb-0 shadow-md mb-3">
+                                            <a @click="$dispatch('img-modal', { imgModalSrc: '../image/qc2.png', imgModalDesc: 'XXXX年傑出產業創新獎' })"
+                                                class="cursor-pointer">
+                                                <img src="../image/qc2.png" alt="Placeholder Image"
+                                                    class="aspect-[3/4] w-full rounded-md object-cover">
+                                            </a>
+                                            <div class="px-1 py-4">
+                                                <div class="font-bold text-lg text-gray-800 mb-2 text-center">
+                                                    XXXX年傑出產業創新獎</div>
                                             </div>
                                         </div>
                                     </div>
@@ -494,6 +585,33 @@
             </div>
         </div>
     </section>
+    <!-- 模態窗口觸發 -->
+    <div @img-modal.window="
+     imgModal = true;
+     imgModalSrc = $event.detail.imgModalSrc;
+     imgModalDesc = $event.detail.imgModalDesc;
+     ">
+        <!-- 模態窗口 -->
+        <div x-show="imgModal"
+            class="fixed inset-0 z-[101] flex items-center justify-center p-4 bg-black bg-opacity-75">
+            <div class="relative flex flex-col max-w-3xl max-h-full overflow-auto" @click.away="imgModal = false">
+                <!-- 關閉按鈕 -->
+                <button @click="imgModal = false" class="absolute top-2 right-2 text-white">
+                    <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 18 18">
+                        <path
+                            d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                        </path>
+                    </svg>
+                </button>
+                <!-- 圖片與描述 -->
+                <div class="p-2">
+                    <img :src="imgModalSrc" :alt="imgModalDesc" class="object-contain h-1/2-screen mx-auto pt-5">
+                    <p x-text="imgModalDesc" class="text-center text-white mt-2"></p>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="relative border border-gray-200 pb-0 md:pt-16 pt-12">
         <div class="container mx-auto relative">
             <a href="#" class="scroll-to-top absolute bottom-2 right-5 z-50">
