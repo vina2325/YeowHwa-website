@@ -234,8 +234,11 @@
                 <div class="mx-auto  max-w-xl text-center" data-aos="fade-down" data-aos-duration="3000"
                     data-aos-delay="300">
                     <h1 class="my-5 text-5xl font-bold leading-tight text-gray-800">聯絡我們</h1>
-                    <p class="mb-2 mt-2 text-lg leading-relaxed text-gray-600">
-                        如果您對又華產品有興趣或是有任何問題，請使用下方表格與我們聯絡。<br>在瞭解過相關訊息後，我們將會儘快給予回覆。
+                    <p class="mb-2 mt-10 leading-relaxed text-gray-600 font-bold text-xl">
+                        非常感謝您的留言！
+                    </p>
+                    <p class="mb-5 mt-2 leading-relaxed text-gray-600  text-lg">訊息已經成功送出！<br>
+                        我們收到訊息後，將會派專人儘速與您聯絡。
                     </p>
                 </div>
             </div>
@@ -245,100 +248,6 @@
         </div>
     </section>
     <section class="content" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="500">
-        <form id="contactForm" action="#" method="POST"
-            class="mx-auto mb-20 max-w-xl bg-white p-10 rounded-md border border-gray-200">
-            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                <!-- 聯絡人姓名 -->
-                <div>
-                    <label for="first-name" class="block text-sm font-semibold leading-6 text-black">聯絡人姓名<span
-                            class="text-red-500">&#42;</span></label>
-                    <div class="mt-2.5">
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" required
-                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <!-- 國家 -->
-                <div>
-                    <label for="country" class="block text-sm font-semibold leading-6 text-black">國家</label>
-                    <div class="mt-2.5">
-                        <input type="text" name="country" id="country" autocomplete="country"
-                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <!-- 公司名稱 -->
-                <div>
-                    <label for="company" class="block text-sm font-semibold leading-6 text-black">公司名稱<span
-                            class="text-red-500">&#42;</span></label>
-                    <div class="mt-2.5">
-                        <input type="text" name="company" id="company" autocomplete="organization" required
-                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <!-- 聯絡電話 -->
-                <div>
-                    <label for="phone" class="block text-sm font-semibold leading-6 text-black">聯絡電話</label>
-                    <div class="mt-2.5">
-                        <input type="tel" name="phone" id="phone" autocomplete="tel"
-                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <!-- 電子信箱 -->
-                <div>
-                    <label for="email" class="block text-sm font-semibold leading-6 text-black">電子信箱<span
-                            class="text-red-500">&#42;</span></label>
-                    <div class="mt-2.5">
-                        <input type="email" name="email" id="email" autocomplete="email" required
-                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <!-- 地址 -->
-                <div>
-                    <label for="address" class="block text-sm font-semibold leading-6 text-black">地址</label>
-                    <div class="mt-2.5">
-                        <input type="text" name="address" id="address" autocomplete="street-address"
-                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <!-- 訊息 -->
-                <div class="sm:col-span-2">
-                    <label for="message" class="block text-sm font-semibold leading-6 text-black">訊息<span
-                            class="text-red-500">&#42;</span></label>
-                    <div class="mt-2.5">
-                        <textarea name="message" id="message" rows="4" required
-                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6"></textarea>
-                    </div>
-                </div>
-
-                <!-- 驗證碼 -->
-                <div>
-                    <label for="captcha" class="block text-sm font-semibold leading-6 text-black">驗證碼<span
-                            class="text-red-500">&#42;</span></label>
-                    <div class="mt-2.5 relative">
-                        <input type="text" name="captcha" id="captcha" required
-                            class="bg-teal-light/10 block w-full rounded-md border px-3.5 py-2 text-gray-900 shadow-sm border-teal-light ring-inset ring-teal-300 placeholder:text-gray-400 placeholder:bg-teal-light focus:ring-1 focus:ring-inset focus:ring-teal-40 sm:text-sm sm:leading-6 relative z-10">
-                        <div class="items-center justify-end flex gap-2 h-full w-full absolute right-0 top-0">
-                            <span class="chktext" id="chktext"><img src="../image/load_show_chknum.jpg"
-                                    alt="驗證碼"></span>
-                            <button type="button" class="reBtn relative z-20" onclick="load_showchknum();"></button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- 送出按鈕 -->
-                <div class="mt-8">
-                    <button type="submit"
-                        class="block w-full rounded-md bg-teal px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 transition-opacity hover:opacity-70">確認送出</button>
-                </div>
-            </div>
-        </form>
-
         <!--  地图 -->
         <h2 class="text-center text-teal font-bold text-3xl mb-10">聯絡資訊</h2>
         <div id="map"></div>
@@ -596,37 +505,6 @@
     </footer>
     <script src="../js/leaflet.js"></script>
     <script>
-        // 表單驗證
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // 防止表單提交
-
-            // 取得輸入值
-            const firstName = document.getElementById('first-name').value.trim();
-            const company = document.getElementById('company').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const captcha = document.getElementById('captcha').value.trim();
-
-            // 檢查必填欄位
-            if (!firstName || !company || !email || !message || !captcha) {
-                alert('請完整填寫所有必填欄位！');
-                return;
-            }
-
-            // 電子信箱格式驗證
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert('請輸入有效的電子信箱格式！');
-                return;
-            }
-
-            // 驗證成功後
-            alert('表單提交成功！');
-            window.location.href = "contact_ok.html"; // 跳轉成功頁面
-        });
-
-
-
         // 初始化地圖，設置中心點和縮放級別
         var map = L.map('map', {
             scrollWheelZoom: false // 禁用滑鼠滾輪縮放
