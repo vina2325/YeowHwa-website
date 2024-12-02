@@ -46,3 +46,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 AOS.init();
+// cookie
+document.addEventListener("DOMContentLoaded", function () {
+  const cookieBox = document.getElementById("cookieBox");
+
+  // 檢查 cookies 是否已經被接受過
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    // 如果已經接受過，則隱藏
+    cookieBox.style.display = "none";
+  } else {
+    // 如果未接受過，則顯示
+    cookieBox.style.display = "block";
+  }
+
+  // 當用戶點擊按鈕
+  const acceptButton = document.getElementById("acceptCookies");
+  acceptButton.addEventListener("click", function () {
+    localStorage.setItem("cookiesAccepted", "true");
+    cookieBox.classList.add("opacity-0");
+    setTimeout(function () {
+      cookieBox.style.display = "none";
+    }, 500);
+  });
+});
